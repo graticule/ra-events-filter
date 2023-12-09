@@ -33,4 +33,4 @@ export default function Portfolio (props) {
       <ProjectList projects={projectFiltered} />
     </>
   )
-};
+}
