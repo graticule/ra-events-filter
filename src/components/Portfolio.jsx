@@ -4,13 +4,13 @@ import Toolbar from "./Toolbar";
 import ProjectList from "./ProjectList";
 
 export default function Portfolio (props) {
-  const [state, setState] = useState({filter: "All"});
+  const [filter, setState] = useState("All");
 
   const projectFiltered = props.projects.filter(project => {
-    if (state.filter === "All") {
+    if (filter === "All") {
       return true;
     }
-    return project.category === state.filter
+    return project.category === filter
   }
   );
 
@@ -23,12 +23,12 @@ export default function Portfolio (props) {
   ["All"]);
 
   const selectFilter = (filter) => {
-    setState({...state, "filter": filter});
+    setState(filter);
   }
 
   return (
     <>
-      <Toolbar filters={filters} selected={state.filter} onSelectFilter={selectFilter}/>
+      <Toolbar filters={filters} selected={filter} onSelectFilter={selectFilter}/>
       <ProjectList projects={projectFiltered} />
     </>
   )
