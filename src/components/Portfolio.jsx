@@ -3,7 +3,6 @@ import { useState } from "react";
 import Toolbar from "./Toolbar";
 import ProjectList from "./ProjectList";
 
-useState
 export default function Portfolio (props) {
   const [state, setState] = useState({filter: "All"});
 
